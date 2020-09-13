@@ -32,6 +32,12 @@
     return false;
   }
   
+  function draw() {
+    document.getElementById("text").innerHTML = data + "<br>" + title + input; 
+    var scrollingElement = (document.scrollingElement || document.body);
+    scrollingElement.scrollTop = scrollingElement.scrollHeight;
+  }
+  
   onkeypress = function(key) { 
     //console.log(key['key']);
     
@@ -39,13 +45,13 @@
       var o = command(input);
       
       if(o) data += "<br>";
-      else data += "Ошибка, такой комманды нету.<br>";
+      else if(input != "") data += "Ошибка, такой комманды нету.<br>";
       input = "";
     }
       // input[data.length-1] = '';
     else input += key['key'];
     
-    document.getElementById("text").innerHTML = data + "<br>" + title + input;
+    draw();
   }
   </script>
   
