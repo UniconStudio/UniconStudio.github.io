@@ -9,14 +9,17 @@
 </style>
   
 <script>
+  var title = "~:/ ";
   var data = "Hello, Terminal!\n";
   var input = "";
   
   onkeypress = function(key) { 
     console.log(key);
     
-    if(key['key'] == "\\") data[data.length-1] = '';
-    data += key['key'];
+    if(key['key'] == "\\") input[data.length-1] = '';
+    else input += key['key'];
+    
+    document.getElementById("text").innerHTML = data + "\n" + title + input;
   }
   </script>
   
