@@ -13,12 +13,23 @@
   var data = "Hello, Terminal!<br>";
   var input = "";
   
+  function command(cmd) {
+    switch(cmd) {
+      case "help":
+        data += "Помощи не жди.<br>";
+        
+      case "ls":
+        data += "Тут нет папок, ты дурак?<br>";
+    }
+  }
+  
   onkeypress = function(key) { 
     //console.log(key['key']);
     
     if(key['key'] == "Enter") { 
+      command(input);
       
-      data = "<br>";
+      data += "<br>";
       input = "";
     }
       // input[data.length-1] = '';
