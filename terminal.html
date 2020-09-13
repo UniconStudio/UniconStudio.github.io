@@ -14,13 +14,18 @@
   var input = "";
   
   function command(cmd) {
-    switch(cmd) {
+    var cmdd = cmd.split(" ");
+    switch(cmdd[0]) {
       case "help":
-        data += "Помощи не жди.<br>";
+        data += "Помощи не жди.";
         return true;
         
       case "ls":
-        data += "Тут нет папок, ты дурак?<br>";
+        data += "Тут нет папок, ты дурак?";
+        return true;
+        
+      case "title":
+        title = cmdd[1];
         return true;
     }
     
