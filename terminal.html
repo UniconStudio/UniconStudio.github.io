@@ -14,9 +14,14 @@
   var input = "";
   
   onkeypress = function(key) { 
-    console.log(key['key']);
+    //console.log(key['key']);
     
-    if(key['key'] == "\\") input[data.length-1] = '';
+    if(key['key'] == "Enter") { 
+      
+      data = "<br>";
+      input = "";
+    }
+      // input[data.length-1] = '';
     else input += key['key'];
     
     document.getElementById("text").innerHTML = data + "<br>" + title + input;
