@@ -9,8 +9,8 @@
 </style>
   
 <script>
-  var title = "~:/ ";
-  var data = "Hello, Terminal!\n";
+  var title = "root@terminal: $ ";
+  var data = "Hello, Terminal!<br>";
   var input = "";
   
   onkeypress = function(key) { 
@@ -19,7 +19,7 @@
     if(key['key'] == "\\") input[data.length-1] = '';
     else input += key['key'];
     
-    document.getElementById("text").innerHTML = data + "\n" + title + input;
+    document.getElementById("text").innerHTML = data + "<br>" + title + input;
   }
   </script>
   
