@@ -14,7 +14,7 @@
   var input = "";
   
   onkeypress = function(key) { 
-    console.log(key);
+    console.log(key['key']);
     
     if(key['key'] == "\\") input[data.length-1] = '';
     else input += key['key'];
