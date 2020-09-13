@@ -8,6 +8,18 @@
   }
 </style>
   
+<script>
+  var data = "Hello, Terminal!\n";
+  var input = "";
+  
+  onkeypress = function(key) { 
+    console.log(key);
+    
+    if(key['key'] == "\\") data[data.length-1] = '';
+    data += key['key'];
+  }
+  </script>
+  
 <body>
   <font id="text">Hello, Terminal!</font>
 </body>
