@@ -17,21 +17,23 @@
     switch(cmd) {
       case "help":
         data += "Помощи не жди.<br>";
-        break;
+        return true;
         
       case "ls":
         data += "Тут нет папок, ты дурак?<br>";
-        break;
+        return true;
     }
+    
+    return false;
   }
   
   onkeypress = function(key) { 
     //console.log(key['key']);
     
     if(key['key'] == "Enter") { 
-      command(input);
+      var o = command(input);
       
-      data += "<br>";
+      if(o) data += "<br>";
       input = "";
     }
       // input[data.length-1] = '';
